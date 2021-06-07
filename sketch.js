@@ -20,73 +20,55 @@ function setup(){
     block2.shapeColor = "orange";
 
     //create two more blocks i.e. block3 and block4 here
-
     block3 = createSprite(510,580,200,30);
     block3.shapeColor = "red";
 
     block4 = createSprite(730,580,200,30);
-    block4.shapeColor = "lime"
-
-    
+    block4.shapeColor = "lime";    
 
     ball = createSprite(random(20,840),100, 40,40);
     ball.shapeColor = rgb(255,255,255);
 
-    //write code to add velocityX and velocityY
-    
-    ball.velocityX=4
-    ball.velocityY=10
-
+    //write code to add velocityX and velocityY    
+    ball.velocityX=4;
+    ball.velocityY=10;
 }
 
 function draw() {
     background(rgb(169,169,169));
     edges=createEdgeSprites();
-    bounceOff(ball,edges);
 
+    ball.bounceOff(edges);
     
     //write code to bounce off ball from the block1 
-    if(isTouching(ball,block1)){
-        
+    if(isTouching(ball,block1)){        
         music.play();
-        ball.bounceOff(ball,block1)
-        ball.shapeColor = "blue";
-        
-        }
+        bounceOff(ball,block1);
+        ball.shapeColor = "blue";        
+    }
 
-
-
-    if(isTouching(ball,block2)){
-        
+    if(isTouching(ball,block2)){        
         music.stop();
-        ball.bounceOff(ball,block2)
-        ball.shapeColor = "orange";
-        
-      }
+        bounceOff(ball,block2)
+        ball.shapeColor = "orange";        
+    }
 
     //write code to bounce off ball from the block3
-    if(isTouching(ball,block3)){
-        
+    if(isTouching(ball,block3)){        
         music.stop();
-        ball.bounceOff(ball,block3)
-        ball.shapeColor = "red";
-        
-      }
-
+        bounceOff(ball,block3)
+        ball.shapeColor = "red";        
+    }
 
     //write code to bounce off ball from the block4
-
-    if(isTouching(ball,block4)){
-        
+    if(isTouching(ball,block4)){        
         music.stop();
-        ball.bounceOff(ball,block4)
+        bounceOff(ball,block4)
         ball.shapeColor = "lime";
-        
-      }
+    }
 
     drawSprites();
 }
-
 
 
 
