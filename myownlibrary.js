@@ -20,13 +20,13 @@ function isTouching(obj1,obj2){
   
         
         obj1.velocityX = -4;
-        obj2.velocityX = -4;
+        //obj2.velocityX = -4;
         
     }
      if(obj1.y-obj2.y<obj1.height/2+obj2.height/2
       &&obj2.y-obj1.y<obj1.height/2+obj2.height/2){ 
     
         obj1.velocityY = 10;
-        obj2.velocityY = 10;
+        //obj2.velocityY = 10;
     }
   }
